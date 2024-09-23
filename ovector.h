@@ -143,6 +143,17 @@ namespace ostl
 				return true;
 			return false;
 		}
+
+		int find(T value)
+		{
+			for(size_t i = 0; i < this->size; i++)
+			{
+				if(this->arr[i] == value)
+					return i;
+			}
+			return -1;
+		}
+
 	};
 
 	template<typename T>
