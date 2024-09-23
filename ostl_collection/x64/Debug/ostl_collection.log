@@ -1,9 +1,2 @@
 ﻿  main.cpp
-C:\Users\User\Documents\Projects\C++\ostl_collection\ovector.h(98,18): warning C4244: аргумент: преобразование "ostl::size_t" в "int", возможна потеря данных
-  (компиляция исходного файла "main.cpp")
-      C:\Users\User\Documents\Projects\C++\ostl_collection\ovector.h(98,18):
-      контекст создания экземпляра шаблона (сначала самый старый)
-          C:\Users\User\Documents\Projects\C++\ostl_collection\main.cpp(14,12):
-          выполняется компиляция ссылки на экземпляр шаблон функции "std::ostream &ostl::operator <<<int>(std::ostream &,ostl::vector<int> &)"
-  
   ostl_collection.vcxproj -> C:\Users\User\Documents\Projects\C++\ostl_collection\x64\Debug\ostl_collection.exe

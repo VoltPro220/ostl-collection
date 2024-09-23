@@ -34,14 +34,14 @@ namespace ostl
 
 		T& operator[] (ostl::size_t index)
 		{
-			return arr[index];
+			return *(arr + index);
 		}
 
 		T& at(int index)
 		{
 			if(index < 0 || index >= this->size)
 				throw ostl::IndexOutOfRangeException((char*)"Index out of range exception");
-			return arr[index];
+			return this->arr[index];
 		}
 
 		void push_back(T value)
@@ -52,9 +52,8 @@ namespace ostl
 				tmp[i] = this->arr[i];
 			}
 			tmp[this->size++] = value;
-			delete[] arr;
-			arr = tmp;
-
+			delete[] this->arr;
+			this->arr = tmp;
 		}
 
 		void push_front(T value)
@@ -66,8 +65,25 @@ namespace ostl
 				tmp[i + 1] = this->arr[i];
 			}
 			++this->size;
-			delete[] arr;
-			arr = tmp;
+			delete[] this->arr;
+			this->arr = tmp;
+		}
+
+		void insert(T value, ostl::size_t index)
+		{
+			T* tmp = new T[this->size + 1];
+			for(size_t i = 0; i < index; i++)
+			{
+				tmp[i] = this->arr[i];
+			}
+			tmp[index] = value;
+			for(size_t i = index; i < this->size; i++)
+			{
+				tmp[i + 1] = this->arr[i];
+			}
+			++this->size;
+			delete[] this->arr;
+			this->arr = tmp;
 		}
 
 		void pop_back(void)
@@ -77,17 +93,56 @@ namespace ostl
 			{
 				tmp[i] = this->arr[i];
 			}
-			delete[] arr;
-			arr = tmp;
+			delete[] this->arr;
+			this->arr = tmp;
+		}
+
+		void pop_front(void)
+		{
+			T* tmp = new T[--this->size];
+			for(size_t i = 0; i < this->size; i++)
+			{
+				tmp[i] = this->arr[i + 1];
+			}
+			delete[] this->arr;
+			this->arr = tmp;
+		}
+
+		void erase(ostl::size_t index)
+		{
+			T* tmp = new T[--this->size];
+			for(size_t i = 0; i < index; i++)
+			{
+				tmp[i] = this->arr[i];
+			}
+			for(size_t i = index; i < this->size; i++)
+			{
+				tmp[i] = this->arr[i + 1];
+			}
+			delete[] this->arr;
+			this->arr = tmp;
 		}
 
 		inline __cdecl ~vector(void)
 		{
-			delete[] arr;
+			delete[] this->arr;
 		}
 
-
-
+		bool check(ostl::size_t index, T& var)
+		{
+			if(index >= 0 && index < this->size)
+			{
+				var = this->arr[index];
+				return true;
+			}
+			return false;
+		}
+		bool check(ostl::size_t index)
+		{
+			if(index >= 0 && index < this->size)
+				return true;
+			return false;
+		}
 	};
 
 	template<typename T>
