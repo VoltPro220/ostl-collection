@@ -21,9 +21,6 @@
     <ClCompile Include="IndexOutOfRangeException.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="ovector.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IndexOutOfRangeException.h">

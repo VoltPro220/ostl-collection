@@ -21,25 +21,29 @@ namespace ostl
 		T* arr;
 		ostl::size_t size;
 	public:
-		__cdecl vector(void)
+		inline __cdecl vector(void)
 		{
 			this->size = 0;
 			this->arr = new T[this->size];
 		}
+
 		ostl::size_t get_length(void)
 		{
 			return this->size;
 		}
+
 		T& operator[] (ostl::size_t index)
 		{
 			return arr[index];
 		}
+
 		T& at(int index)
 		{
 			if(index < 0 || index >= this->size)
 				throw ostl::IndexOutOfRangeException((char*)"Index out of range exception");
 			return arr[index];
 		}
+
 		void push_back(T value)
 		{
 			T* tmp = new T[this->size + 1];
@@ -52,6 +56,20 @@ namespace ostl
 			arr = tmp;
 
 		}
+
+		void push_front(T value)
+		{
+			T* tmp = new T[this->size + 1];
+			tmp[0] = value;
+			for(size_t i = 0; i < this->size; i++)
+			{
+				tmp[i + 1] = this->arr[i];
+			}
+			++this->size;
+			delete[] arr;
+			arr = tmp;
+		}
+
 		void pop_back(void)
 		{
 			T* tmp = new T[--this->size];
@@ -62,7 +80,8 @@ namespace ostl
 			delete[] arr;
 			arr = tmp;
 		}
-		__cdecl ~vector(void)
+
+		inline __cdecl ~vector(void)
 		{
 			delete[] arr;
 		}
@@ -70,5 +89,16 @@ namespace ostl
 
 
 	};
+
+	template<typename T>
+	std::ostream& operator << (std::ostream& os, ostl::vector<T>& vref)
+	{
+		for(size_t i = 0; i < vref.get_length(); i++)
+		{
+			os << vref.at(i) << std::endl;
+		}
+		return os;
+	}
+
 
 };
