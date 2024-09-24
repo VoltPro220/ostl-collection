@@ -5,11 +5,6 @@
 #define _IOREXCEPTION_H_
 #endif // !_INDEXOUTOFRANGEEXCEPTION_H_
 
-#ifndef _SMPL_PTR_H_
-	#include "smpl_ptr.h"
-	#define _SMPL_PTR_H_
-#endif
-
 namespace ostl
 {
 #ifdef _WIN64
@@ -129,6 +124,7 @@ namespace ostl
 		inline __cdecl ~vector(void)
 		{
 			delete[] this->arr;
+			this->size = 0;
 		}
 
 		bool check(ostl::size_t index, T& var)
