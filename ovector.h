@@ -169,6 +169,18 @@ namespace ostl
 			this->size = 0;
 		}
 
+		void reverse(ostl::size_t length)
+		{
+			T* tmp = new T[length];
+			for(size_t i = 0; i < this->size && i < length; i++)
+			{
+				tmp[i] = this->arr[i];
+			}
+			delete[] this->arr;
+			this->arr = tmp;
+			this->size = length;
+		}
+
 	};
 
 	template<typename T>
