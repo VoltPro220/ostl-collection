@@ -18,15 +18,15 @@
     <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="IndexOutOfRangeException.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IndexOutOfRangeException.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="ovector.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="smpl_ptr.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5,7 +5,10 @@
 #define _IOREXCEPTION_H_
 #endif // !_INDEXOUTOFRANGEEXCEPTION_H_
 
-
+#ifndef _SMPL_PTR_H_
+	#include "smpl_ptr.h"
+	#define _SMPL_PTR_H_
+#endif
 
 namespace ostl
 {

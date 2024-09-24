@@ -1,2 +1,19 @@
 ﻿  main.cpp
+C:\Users\User\Documents\Projects\C++\ostl_collection\main.cpp(6,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\User\Documents\Projects\C++\ostl_collection\main.cpp(12,20): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\User\Documents\Projects\C++\ostl_collection\ovector.h(155,13): warning C4244: return: преобразование "ostl::size_t" в "int", возможна потеря данных
+  (компиляция исходного файла "main.cpp")
+      C:\Users\User\Documents\Projects\C++\ostl_collection\ovector.h(155,13):
+      контекст создания экземпляра шаблона (сначала самый старый)
+          C:\Users\User\Documents\Projects\C++\ostl_collection\main.cpp(16,20):
+          выполняется компиляция ссылки на экземпляр класс шаблон функции "ostl::vector<int>"
+          C:\Users\User\Documents\Projects\C++\ostl_collection\ovector.h(150,7):
+          во время компиляции функции-члена класс шаблон "int ostl::vector<int>::find(T)"
+          with
+          [
+              T=int
+          ]
+              C:\Users\User\Documents\Projects\C++\ostl_collection\main.cpp(33,2):
+              см. первую ссылку на "ostl::vector<int>::find" в "main"
+  
   ostl_collection.vcxproj -> C:\Users\User\Documents\Projects\C++\ostl_collection\x64\Debug\ostl_collection.exe
