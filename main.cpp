@@ -30,10 +30,5 @@ int main(const int argc, const char* const argv[])
 		std::cout << var << std::endl;
 	}
 
-	if(v.find(5)) std::cout << "YES" << std::endl;
-	else std::cout << "NO" << std::endl;
-	/*
-	*/
-
 	return 0;
 }

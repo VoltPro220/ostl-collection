@@ -157,6 +157,18 @@ namespace ostl
 			return -1;
 		}
 
+		void clear()
+		{
+			delete[] this->arr;
+			this->arr = new T[this->size];
+		}
+
+		void remove()
+		{
+			delete[] arr;
+			this->size = 0;
+		}
+
 	};
 
 	template<typename T>
