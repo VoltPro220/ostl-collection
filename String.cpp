@@ -122,6 +122,13 @@ std::ostream& ostl::operator<<(std::ostream& os, ostl::String& stref)
 	return os;
 }
 
+std::istream& ostl::operator>>(std::istream& is, ostl::String& stref)
+{
+	// прочитать строку из входного потока
+	is >> stref.str;
+	return is;
+}
+
 int ostl::strlen(const ostl::String& str)
 {
 	int count = 0;

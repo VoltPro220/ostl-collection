@@ -2,6 +2,7 @@
 
 #include "IndexOutOfRangeException.h"
 #include <ostream>
+#include <istream>
 
 extern "C" const int strlen_c(const char*);
 namespace ostl
@@ -35,12 +36,15 @@ namespace ostl
 
 		char& operator [] (int index) const;
 
+		friend std::istream& operator >> (std::istream& os, ostl::String& stref);
+
 	private:
 		char* str;
 		unsigned int len;
 	};
 
 	std::ostream& operator << (std::ostream& os, ostl::String& stref);
+	std::istream& operator >> (std::istream& os, ostl::String& stref);
 	int strlen(const ostl::String& str);
 	char* c_str(const ostl::String& str);
 
