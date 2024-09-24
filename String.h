@@ -3,6 +3,7 @@
 #include "IndexOutOfRangeException.h"
 #include <ostream>
 
+extern "C" const int strlen_c(const char*);
 namespace ostl
 {
 
@@ -40,7 +41,6 @@ namespace ostl
 	};
 
 	std::ostream& operator << (std::ostream& os, ostl::String& stref);
-	int strlen(const char* str);
 	int strlen(const ostl::String& str);
 	char* c_str(const ostl::String& str);
 

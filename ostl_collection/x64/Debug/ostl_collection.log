@@ -1,3 +1,12 @@
-﻿  main.cpp
+﻿  String.cpp
+C:\Users\User\Documents\Projects\C++\ostl_collection\String.cpp(35,19): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\User\Documents\Projects\C++\ostl_collection\String.cpp(51,19): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\User\Documents\Projects\C++\ostl_collection\String.cpp(86,15): warning C4018: >=: несоответствие типов со знаком и без знака
+C:\Users\User\Documents\Projects\C++\ostl_collection\String.cpp(100,19): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\User\Documents\Projects\C++\ostl_collection\String.cpp(120,15): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\User\Documents\Projects\C++\ostl_collection\String.cpp(137,19): warning C4018: <: несоответствие типов со знаком и без знака
+  main.cpp
 C:\Users\User\Documents\Projects\C++\ostl_collection\main.cpp(7,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Создание кода...
+  strlen.c
   ostl_collection.vcxproj -> C:\Users\User\Documents\Projects\C++\ostl_collection\x64\Debug\ostl_collection.exe

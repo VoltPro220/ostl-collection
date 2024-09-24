@@ -8,7 +8,7 @@ ostl::String::String()
 
 ostl::String::String(const char* str)
 {
-	this->len = strlen(str);
+	this->len = strlen_c(str);
 	this->str = new char[this->len + 1];
 	for(unsigned int i = 0; i < len; i++)
 		this->str[i] = str[i];
@@ -29,7 +29,7 @@ ostl::String::~String()
 
 ostl::String::String(const ostl::String& other)
 {
-	this->len = strlen(other.str);
+	this->len = strlen_c(other.str);
 	this->str = new char[this->len + 1];
 
 	for(int i = 0; i < len; i++)
@@ -45,7 +45,7 @@ ostl::String& ostl::String::operator=(const ostl::String& other)
 		delete[] str;
 
 
-	this->len = strlen(other.str);
+	this->len = strlen_c(other.str);
 	this->str = new char[this->len + 1];
 
 	for(int i = 0; i < this->len; i++)
@@ -63,19 +63,20 @@ ostl::String ostl::String::operator+(const ostl::String& other)
 
 	ostl::String newStr;
 
-	newStr.len = strlen(this->str) + strlen(other.str);
+	newStr.len = strlen_c(this->str) + strlen_c(other.str);
 
-	newStr = new char[strlen(this->str) + strlen(other.str) + 1];
+	newStr = new char[strlen_c(this->str) + strlen_c(other.str) + 1];
 
 	int i = 0;
-	for(; i < strlen(this->str); i++)
+	for(; i < strlen_c(this->str); i++)
 		newStr.str[i] = this->str[i];
 
-	for(int j = 0; j < strlen(other.str); j++, i++)
+	for(int j = 0; j < strlen_c(other.str); j++, i++)
 		newStr.str[i] = other.str[j];
 
 
-	newStr[strlen(this->str) + strlen(other.str)] = '\0';
+	newStr[strlen_c(this->str) + strlen_c(other.str)] = '\0';
+	newStr[strlen_c(this->str) + strlen_c(other.str)] = '\0';
 
 	return newStr;
 }
@@ -119,15 +120,6 @@ std::ostream& ostl::operator<<(std::ostream& os, ostl::String& stref)
 		os << stref[i];
 	}
 	return os;
-}
-
-int ostl::strlen(const char* str)
-{
-	int count = 0;
-
-	for(; str[count] != '\0' ; count++);
-
-	return count;
 }
 
 int ostl::strlen(const ostl::String& str)
