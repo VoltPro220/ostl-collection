@@ -1,5 +1,6 @@
 #include "String.h"
 
+
 ostl::String::String()
 {
 	this->str = nullptr;
