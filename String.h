@@ -1,6 +1,10 @@
 #pragma once
 
-#include "IndexOutOfRangeException.h"
+#ifndef _OUT_OF_RANGE_H_
+#include"out_of_range.h"
+#define _OUT_OF_RANGE_H_
+#endif // !_OUT_OF_RANGE_H_
+
 #include <ostream>
 #include <istream>
 
@@ -44,7 +48,6 @@ namespace ostl
 	};
 
 	std::ostream& operator << (std::ostream& os, ostl::String& stref);
-	std::istream& operator >> (std::istream& os, ostl::String& stref);
 	int strlen(const ostl::String& str);
 	char* c_str(const ostl::String& str);
 

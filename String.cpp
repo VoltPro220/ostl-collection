@@ -1,4 +1,9 @@
+
+#ifndef _STRING_H_
 #include "String.h"
+#define _STRING_H_
+#endif // !_STRING_H_
+
 
 
 ostl::String::String()
@@ -85,7 +90,7 @@ ostl::String ostl::String::operator+(const ostl::String& other)
 char& ostl::String::at(int index) const
 {
 	if(this->len >= index || len < 0)
-		throw ostl::IndexOutOfRangeException((char*)"Exception: Index out of range");
+		throw ostl::out_of_range((char*)"Exception: Index out of range");
 	return this->str[index];
 }
 

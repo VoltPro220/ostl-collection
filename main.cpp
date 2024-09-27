@@ -1,23 +1,19 @@
 ﻿#include <iostream>
-#include "ovector.h"
-#include "String.h"
-
+#include "forward_list.h"
 
 int main(const int argc, const char* const argv[])
 {
-	srand(time(NULL));
+	
+	ostl::forward_list<int> fl;
+	fl.push_back(5);
+	fl.push_back(4);
+	fl.push_back(3);
+	fl.push_back(2);
+	fl.push_back(1);
+	fl.pop_front();
 
-	ostl::vector<ostl::String> v;
+	for(ostl::size_t i = 0; i < fl.get_length(); i++) 
+		std::cout << fl[i] << std::endl;
 
-	v.push_back("ELEMENT 1");
-	v.push_back("ELEMENT 2");
-	v.push_back("ELEMENT 3");
-	v.push_back("ELEMENT 4");
-	v.push_back("ELEMENT 5");
-
-	for(size_t i = 0; i < v.get_length(); i++)
-	{
-		std::cout << v.operator[](i) << std::endl;
-	}
 	return 0;
 }

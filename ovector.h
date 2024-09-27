@@ -1,9 +1,9 @@
 #pragma once
 
-#ifndef _IOREXCEPTION_H_
-#include "IndexOutOfRangeException.h"
-#define _IOREXCEPTION_H_
-#endif // !_INDEXOUTOFRANGEEXCEPTION_H_
+#ifndef _OUT_OF_RANGE_H_
+#include "out_of_range.h"
+#define _OUT_OF_RANGE_H_
+#endif
 
 namespace ostl
 {
@@ -24,6 +24,21 @@ namespace ostl
 			this->size = 0;
 			this->arr = new T[this->size];
 		}
+		
+		vector& operator = (const vector& other)
+		{
+
+			if(this->arr != nullptr)
+				delete[] arr;
+			this->arr = new T[other.size];
+
+			for(ostl::size_t i = 0; i < other.size; i++)
+			{
+				this->arr[i] = other.size[i];
+			}
+
+			return *this;
+		};
 
 		ostl::size_t get_length(void)
 		{
@@ -38,7 +53,7 @@ namespace ostl
 		T& at(int index)
 		{
 			if(index < 0 || index >= this->size)
-				throw ostl::IndexOutOfRangeException((char*)"Index out of range exception");
+				throw ostl::out_of_range((char*)"Index out of range exception");
 			return this->arr[index];
 		}
 
@@ -123,8 +138,8 @@ namespace ostl
 
 		inline __cdecl ~vector(void)
 		{
-			delete[] this->arr;
-			this->size = 0;
+			if(this->arr) delete[] this->arr;
+			if(this->size != 0)this->size = 0;
 		}
 
 		bool check(ostl::size_t index, T& var)
@@ -163,9 +178,10 @@ namespace ostl
 		{
 			delete[] arr;
 			this->size = 0;
+			this->arr = new T[this->size];
 		}
 
-		void reverse(ostl::size_t length)
+		void reserve(ostl::size_t length)
 		{
 			T* tmp = new T[length];
 			for(size_t i = 0; i < this->size && i < length; i++)

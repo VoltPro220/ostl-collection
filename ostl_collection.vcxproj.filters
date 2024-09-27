@@ -26,7 +26,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="IndexOutOfRangeException.h">
+    <ClInclude Include="out_of_range.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="ovector.h">
@@ -36,6 +36,12 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="String.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="iterator.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="forward_list.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
