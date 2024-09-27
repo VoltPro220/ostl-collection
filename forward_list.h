@@ -1,8 +1,8 @@
 #pragma once
 
 #ifndef _OVECTOR_H_
-	#include"ovector.h"
-	#define _OVECTOR_H_
+#include"ovector.h"
+#define _OVECTOR_H_
 #endif
 
 #ifndef _OUT_OF_RANGE_H_
@@ -45,19 +45,28 @@ namespace ostl
 			this->size++;
 		}
 
-		void removeAt(ostl::size_t index)
+		void insert(T value, ostl::size_t index)
 		{
 			if(index < 0 || index >= this->size)
 				throw out_of_range("Index out of range exception");
-
-
-
+			if(index == 0)
+				this->push_front(value);
+			else
+			{
+				Node<T>* pre = this->head;
+				for(size_t i = 0; i < index - 1; i++)
+				{
+					pre = pre->next;
+				}
+				pre->next = new Node<T>(value, pre->Next);
+				this->size++;
+			}
 		}
 
-		void clear()
+		void push_front(T value)
 		{
-			while(this->size) 
-				this->pop_front();
+			this->head = new Node<T>(value, this->head);
+			this->size++;	
 		}
 
 		void pop_front()
@@ -67,6 +76,42 @@ namespace ostl
 			delete tmp;
 			this->size--;
 		}
+
+		void pop_back()
+		{
+			this->removeAt(this->size - 1);
+		}
+
+		void removeAt(ostl::size_t index)
+		{
+			if(index < 0 || index >= this->size)
+				throw out_of_range("Index out of range exception");
+			if(index == 0)
+			{
+				this->pop_front();
+			}
+			else
+			{
+				Node<T>* pre = this->head;
+				for(size_t i = 0; i < index - 1; i++)
+				{
+					pre = pre->next;
+				}
+				Node<T>* del = pre->next;
+				pre = del->next;
+				delete del;
+				this->size--;
+			}
+
+
+		}
+
+		void clear()
+		{
+			while(this->size)
+				this->pop_front();
+		}
+
 
 		T& operator[](ostl::size_t index)
 		{
