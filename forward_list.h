@@ -5,6 +5,8 @@
 #define _OVECTOR_H_
 #endif
 
+#include <ostream>
+
 #ifndef _OUT_OF_RANGE_H_
 #include"out_of_range.h"
 #define _OUT_OF_RANGE_H_
@@ -48,7 +50,7 @@ namespace ostl
 		void insert(T value, ostl::size_t index)
 		{
 			if(index < 0 || index >= this->size)
-				throw out_of_range("Index out of range exception");
+				throw out_of_range((char*)"Index out of range exception");
 			if(index == 0)
 				this->push_front(value);
 			else
@@ -58,7 +60,7 @@ namespace ostl
 				{
 					pre = pre->next;
 				}
-				pre->next = new Node<T>(value, pre->Next);
+				pre->next = new Node<T>(value, pre->next);
 				this->size++;
 			}
 		}
@@ -66,7 +68,7 @@ namespace ostl
 		void push_front(T value)
 		{
 			this->head = new Node<T>(value, this->head);
-			this->size++;	
+			this->size++;
 		}
 
 		void pop_front()
@@ -85,7 +87,7 @@ namespace ostl
 		void removeAt(ostl::size_t index)
 		{
 			if(index < 0 || index >= this->size)
-				throw out_of_range("Index out of range exception");
+				throw out_of_range((char*)"Index out of range exception");
 			if(index == 0)
 			{
 				this->pop_front();
@@ -98,7 +100,7 @@ namespace ostl
 					pre = pre->next;
 				}
 				Node<T>* del = pre->next;
-				pre = del->next;
+				pre->next = del->next;
 				delete del;
 				this->size--;
 			}
@@ -111,7 +113,6 @@ namespace ostl
 			while(this->size)
 				this->pop_front();
 		}
-
 
 		T& operator[](ostl::size_t index)
 		{
@@ -131,6 +132,7 @@ namespace ostl
 			this->clear();
 		}
 
+
 	private:
 		template<typename T>
 		class Node
@@ -148,5 +150,13 @@ namespace ostl
 		Node<T>* head;
 
 	};
-
+	template<typename T>
+	std::ostream& operator << (std::ostream& os, ostl::forward_list<T>& fl)
+	{
+		for(size_t i = 0; i < fl.get_length(); i++)
+		{
+			os << fl[i] << "\n";
+		}
+		return os;
+	}
 }

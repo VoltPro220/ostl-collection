@@ -38,9 +38,6 @@
     <ClInclude Include="String.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="iterator.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="forward_list.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>

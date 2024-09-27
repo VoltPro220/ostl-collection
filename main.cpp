@@ -11,9 +11,8 @@ int main(const int argc, const char* const argv[])
 	fl.push_back(2);
 	fl.push_back(1);
 	fl.pop_front();
-
-	for(ostl::size_t i = 0; i < fl.get_length(); i++) 
-		std::cout << fl[i] << std::endl;
+	fl.removeAt(2);
+	std::cout << fl << std::endl;
 
 	return 0;
 }

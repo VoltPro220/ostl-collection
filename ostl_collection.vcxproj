@@ -134,7 +134,6 @@
   <ItemGroup>
     <ClInclude Include="forward_list.h" />
     <ClInclude Include="out_of_range.h" />
-    <ClInclude Include="iterator.h" />
     <ClInclude Include="ovector.h" />
     <ClInclude Include="smpl_ptr.h" />
     <ClInclude Include="String.h" />
