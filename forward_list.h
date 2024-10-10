@@ -79,6 +79,21 @@ namespace ostl
 			this->size--;
 		}
 
+		T& at(ostl::size_t index)
+		{
+			if(index < 0 || index >= this->size)
+				throw out_of_range((char*)"Index out of range exception");
+			ostl::size_t tmp = 0;
+			Node<T>* current = this->head;
+			while(current != nullptr)
+			{
+				if(tmp == index)
+					return current->value;
+				current = current->next;
+				tmp++;
+			}
+		}
+
 		void pop_back()
 		{
 			this->removeAt(this->size - 1);

@@ -6,13 +6,13 @@
 
 
 
-ostl::String::String()
+ostl::string::string()
 {
 	this->str = nullptr;
 	this->len = 0;
 }
 
-ostl::String::String(const char* str)
+ostl::string::string(const char* str)
 {
 	this->len = strlen_c(str);
 	this->str = new char[this->len + 1];
@@ -21,19 +21,19 @@ ostl::String::String(const char* str)
 	this->str[len] = '\0';
 }
 
-ostl::String::String(ostl::String&& other)
+ostl::string::string(ostl::string&& other)
 {
 	this->len = other.len;
 	this->str = other.str;
 	other.str = nullptr;
 }
 
-ostl::String::~String()
+ostl::string::~string()
 {
 	delete[] this->str;
 }
 
-ostl::String::String(const ostl::String& other)
+ostl::string::string(const ostl::string& other)
 {
 	this->len = strlen_c(other.str);
 	this->str = new char[this->len + 1];
@@ -44,7 +44,7 @@ ostl::String::String(const ostl::String& other)
 	this->str[len] = '\0';
 }
 
-ostl::String& ostl::String::operator=(const ostl::String& other)
+ostl::string& ostl::string::operator=(const ostl::string& other)
 {
 
 	if(this->str != nullptr)
@@ -64,10 +64,10 @@ ostl::String& ostl::String::operator=(const ostl::String& other)
 
 }
 
-ostl::String ostl::String::operator+(const ostl::String& other)
+ostl::string ostl::string::operator+(const ostl::string& other)
 {
 
-	ostl::String newStr;
+	ostl::string newStr;
 
 	newStr.len = strlen_c(this->str) + strlen_c(other.str);
 
@@ -87,19 +87,19 @@ ostl::String ostl::String::operator+(const ostl::String& other)
 	return newStr;
 }
 
-char& ostl::String::at(int index) const
+char& ostl::string::at(int index) const
 {
 	if(this->len >= index || len < 0)
 		throw ostl::out_of_range((char*)"Exception: Index out of range");
 	return this->str[index];
 }
 
-unsigned int ostl::String::length() const
+unsigned int ostl::string::length() const
 {
 	return this->len;
 }
 
-bool ostl::String::operator==(const ostl::String& other) const
+bool ostl::string::operator==(const ostl::string& other) const
 {
 	if(this->len != other.len)
 		return false;
@@ -109,17 +109,17 @@ bool ostl::String::operator==(const ostl::String& other) const
 	return true;
 }
 
-bool ostl::String::operator!=(const ostl::String& other) const
+bool ostl::string::operator!=(const ostl::string& other) const
 {
 	return !(this->operator==(other));
 }
 
-char& ostl::String::operator[](int index) const
+char& ostl::string::operator[](int index) const
 {
 	return this->str[index];
 }
 
-std::ostream& ostl::operator<<(std::ostream& os, ostl::String& stref)
+std::ostream& ostl::operator<<(std::ostream& os, ostl::string& stref)
 {
 	for(size_t i = 0; i < stref.length(); i++)
 	{
@@ -128,14 +128,14 @@ std::ostream& ostl::operator<<(std::ostream& os, ostl::String& stref)
 	return os;
 }
 
-std::istream& ostl::operator>>(std::istream& is, ostl::String& stref)
+std::istream& ostl::operator>>(std::istream& is, ostl::string& stref)
 {
 	// прочитать строку из входного потока
 	is >> stref.str;
 	return is;
 }
 
-int ostl::strlen(const ostl::String& str)
+int ostl::strlen(const ostl::string& str)
 {
 	int count = 0;
 
@@ -144,7 +144,7 @@ int ostl::strlen(const ostl::String& str)
 	return count;
 }
 
-char* ostl::c_str(const ostl::String& str)
+char* ostl::c_str(const ostl::string& str)
 {
 	char* c = new char[str.length()];
 	for(int i = 0; i < str.length() ; i++) 

@@ -12,43 +12,43 @@ extern "C" const int strlen_c(const char*);
 namespace ostl
 {
 
-	class String
+	class string
 	{
 	public:
 
-		String();
+		string();
 
-		String(const char* str);
+		string(const char* str);
 
-		String(String&& other);
+		string(string&& other);
 
-		~String();
+		~string();
 
-		String(const String& other);
+		string(const string& other);
 
-		String& operator = (const String& other);
+		string& operator = (const string& other);
 
-		String operator + (const String& other);
+		string operator + (const string& other);
 
 		char& at(int index) const;
 
 		unsigned int length() const;
 
-		bool operator == (const String& other) const;
+		bool operator == (const string& other) const;
 
-		bool operator != (const String& other) const;
+		bool operator != (const string& other) const;
 
 		char& operator [] (int index) const;
 
-		friend std::istream& operator >> (std::istream& os, ostl::String& stref);
+		friend std::istream& operator >> (std::istream& os, ostl::string& stref);
 
 	private:
 		char* str;
 		unsigned int len;
 	};
 
-	std::ostream& operator << (std::ostream& os, ostl::String& stref);
-	int strlen(const ostl::String& str);
-	char* c_str(const ostl::String& str);
+	std::ostream& operator << (std::ostream& os, ostl::string& stref);
+	int strlen(const ostl::string& str);
+	char* c_str(const ostl::string& str);
 
 }

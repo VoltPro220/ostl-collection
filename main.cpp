@@ -1,18 +1,14 @@
 ﻿#include <iostream>
-#include "forward_list.h"
+#include "list.h"
+#include "String.h"
 
 int main(const int argc, const char* const argv[])
 {
-	
-	ostl::forward_list<int> fl;
-	fl.push_back(5);
-	fl.push_back(4);
-	fl.push_back(3);
-	fl.push_back(2);
-	fl.push_back(1);
-	fl.pop_front();
-	fl.removeAt(2);
-	std::cout << fl << std::endl;
-
+	ostl::list<int> l;
+	l.push_front(5);
+	l.push_front(4);
+	l.push_front(3);
+	l.push_front(2);
+	l.push_front(1);
 	return 0;
 }
