@@ -129,6 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="stack.c" />
     <ClCompile Include="String.cpp" />
     <ClCompile Include="strlen.c" />
   </ItemGroup>
@@ -138,6 +139,7 @@
     <ClInclude Include="out_of_range.h" />
     <ClInclude Include="ovector.h" />
     <ClInclude Include="smpl_ptr.h" />
+    <ClInclude Include="stack.h" />
     <ClInclude Include="string.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

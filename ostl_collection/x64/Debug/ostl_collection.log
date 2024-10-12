@@ -1,113 +1,19 @@
 ﻿  main.cpp
-C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(24,15): error C2440: инициализация: невозможно преобразовать "ostl::list<int>::Node<T> *" в "ostl::list<int>::Node<T>"
-C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(24,15): error C2440:         with
-C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(24,15): error C2440:         [
-C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(24,15): error C2440:             T=int
-C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(24,15): error C2440:         ]
+C:\Users\User\Documents\Проекты\C++\ostl_collection\stack.c(13,13): error C2440: инициализация: невозможно преобразовать "void *" в "STACK *"
   (компиляция исходного файла "main.cpp")
-      C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(24,15):
-      "ostl::list<int>::Node<T>::Node": ни одна перегруженная функция не может преобразовать все типы аргументов
-          with
-          [
-              T=int
-          ]
-          C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(67,1):
-          может быть "ostl::list<int>::Node<T>::Node(ostl::list<T>::Node<T> &&)"
-          with
-          [
-              T=int
-          ]
-              C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(24,15):
-              "ostl::list<int>::Node<T>::Node(ostl::list<T>::Node<T> &&)": невозможно преобразовать аргумент 1 из "ostl::list<int>::Node<T> *" в "ostl::list<int>::Node<T> &&"
-          with
-          [
-              T=int
-          ]
-                  C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(24,28):
-                  Причина: невозможно преобразовать "ostl::list<int>::Node<T> *" в "ostl::list<int>::Node<T>"
-          with
-          [
-              T=int
-          ]
-                  C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(24,28):
-                  Для преобразования требуется второй оператор пользовательского преобразования или конструктор
-          C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(67,1):
-          или       "ostl::list<int>::Node<T>::Node(const ostl::list<T>::Node<T> &)"
-          with
-          [
-              T=int
-          ]
-              C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(24,15):
-              "ostl::list<int>::Node<T>::Node(const ostl::list<T>::Node<T> &)": невозможно преобразовать аргумент 1 из "ostl::list<int>::Node<T> *" в "const ostl::list<int>::Node<T> &"
-          with
-          [
-              T=int
-          ]
-                  C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(24,28):
-                  Причина: невозможно преобразовать "ostl::list<int>::Node<T> *" в "const ostl::list<int>::Node<T>"
-          with
-          [
-              T=int
-          ]
-                  C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(24,28):
-                  Для преобразования требуется второй оператор пользовательского преобразования или конструктор
-          C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(58,4):
-          или       "ostl::list<int>::Node<T>::Node(T,ostl::list<T>::Node<T> *)"
-          with
-          [
-              T=int
-          ]
-              C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(24,15):
-              "ostl::list<int>::Node<T>::Node(T,ostl::list<T>::Node<T> *)": невозможно преобразовать аргумент 1 из "ostl::list<int>::Node<T> *" в "T"
-          with
-          [
-              T=int
-          ]
-                  C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(24,28):
-                  Не существует контекста, в котором такое преобразование возможно
-          C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(24,15):
-          при попытке сопоставить список аргументов "(ostl::list<int>::Node<T> *)"
-          with
-          [
-              T=int
-          ]
-      C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(24,15):
-      контекст создания экземпляра шаблона (сначала самый старый)
-          C:\Users\User\Documents\Проекты\C++\ostl_collection\main.cpp(7,18):
-          выполняется компиляция ссылки на экземпляр класс шаблон функции "ostl::list<int>"
-          C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(22,8):
-          во время компиляции функции-члена класс шаблон "void ostl::list<int>::push_front(T)"
-          with
-          [
-              T=int
-          ]
-              C:\Users\User\Documents\Проекты\C++\ostl_collection\main.cpp(8,14):
-              см. первую ссылку на "ostl::list<int>::push_front" в "main"
+      C:\Users\User\Documents\Проекты\C++\ostl_collection\stack.c(13,13):
+      Для преобразования "void*" к указателю на тип, не являющемуся "void", требуется явное приведение
   
-C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(26,18): error C2440: =: невозможно преобразовать "ostl::list<int>::Node<T>" в "ostl::list<int>::Node<T> *"
-C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(26,18): error C2440:         with
-C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(26,18): error C2440:         [
-C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(26,18): error C2440:             T=int
-C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(26,18): error C2440:         ]
+C:\Users\User\Documents\Проекты\C++\ostl_collection\stack.h(7,17): warning C4091: typedef : пропускается слева от "OBJ", когда ни одна переменная не объявлена
   (компиляция исходного файла "main.cpp")
-      C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(26,18):
-      Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
   
-C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(29,24): error C2440: =: невозможно преобразовать "ostl::list<int>::Node<T>" в "ostl::list<int>::Node<T> *"
-C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(29,24): error C2440:         with
-C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(29,24): error C2440:         [
-C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(29,24): error C2440:             T=int
-C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(29,24): error C2440:         ]
+C:\Users\User\Documents\Проекты\C++\ostl_collection\stack.h(8,9): error C2732: спецификация связывания противоречит более ранней спецификации "push"
   (компиляция исходного файла "main.cpp")
-      C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(29,24):
-      Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+      C:\Users\User\Documents\Проекты\C++\ostl_collection\stack.h(8,9):
+       см. объявление "push"
   
-C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(32,17): error C2440: =: невозможно преобразовать "ostl::list<int>::Node<T>" в "ostl::list<int>::Node<T> *"
-C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(32,17): error C2440:         with
-C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(32,17): error C2440:         [
-C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(32,17): error C2440:             T=int
-C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(32,17): error C2440:         ]
+C:\Users\User\Documents\Проекты\C++\ostl_collection\stack.h(9,9): error C2732: спецификация связывания противоречит более ранней спецификации "pop"
   (компиляция исходного файла "main.cpp")
-      C:\Users\User\Documents\Проекты\C++\ostl_collection\list.h(32,17):
-      Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+      C:\Users\User\Documents\Проекты\C++\ostl_collection\stack.h(9,9):
+       см. объявление "pop"
   
