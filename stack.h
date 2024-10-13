@@ -34,3 +34,10 @@ stack* pop(stack* top)
 {
 	return (stack*)popc(top);
 }
+
+stack* free_c(stack* top)
+{
+	while(top)
+		top = pop(top);
+	return NULL;
+}
