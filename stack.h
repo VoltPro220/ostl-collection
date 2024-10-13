@@ -1,5 +1,4 @@
 #pragma once
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -23,7 +22,6 @@ EXTERNC
 voidp popc(stack* top);
 EXTERNC 
 void prints(const stack* top);
-
 
 #undef EXTERNC
 
