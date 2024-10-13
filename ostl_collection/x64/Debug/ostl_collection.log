@@ -1,19 +1,3 @@
 ﻿  main.cpp
-C:\Users\User\Documents\Проекты\C++\ostl_collection\stack.c(13,13): error C2440: инициализация: невозможно преобразовать "void *" в "STACK *"
-  (компиляция исходного файла "main.cpp")
-      C:\Users\User\Documents\Проекты\C++\ostl_collection\stack.c(13,13):
-      Для преобразования "void*" к указателю на тип, не являющемуся "void", требуется явное приведение
-  
-C:\Users\User\Documents\Проекты\C++\ostl_collection\stack.h(7,17): warning C4091: typedef : пропускается слева от "OBJ", когда ни одна переменная не объявлена
-  (компиляция исходного файла "main.cpp")
-  
-C:\Users\User\Documents\Проекты\C++\ostl_collection\stack.h(8,9): error C2732: спецификация связывания противоречит более ранней спецификации "push"
-  (компиляция исходного файла "main.cpp")
-      C:\Users\User\Documents\Проекты\C++\ostl_collection\stack.h(8,9):
-       см. объявление "push"
-  
-C:\Users\User\Documents\Проекты\C++\ostl_collection\stack.h(9,9): error C2732: спецификация связывания противоречит более ранней спецификации "pop"
-  (компиляция исходного файла "main.cpp")
-      C:\Users\User\Documents\Проекты\C++\ostl_collection\stack.h(9,9):
-       см. объявление "pop"
-  
+  stack.c
+  ostl_collection.vcxproj -> C:\Users\User\Documents\Проекты\C++\ostl_collection\x64\Debug\ostl_collection.exe

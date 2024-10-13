@@ -1,35 +1,32 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "stack.h"
 
 
-STACK* push(STACK* top, int data)
+voidp pushc(stack* top, int data)
 {
-	STACK* ptr = malloc(sizeof(STACK));
-	ptr->data = data;
+	stack* ptr = (stack*)malloc(sizeof(stack));
 	ptr->next = top;
+	ptr->data = data;
 	return ptr;
 }
 
-void prints(const STACK* top)
+void prints(const stack* top)
 {
-	const STACK* curr = top;
-	while(curr != NULL)
+	const stack* current = top;
+	while(current != NULL)
 	{
-		printf("%d\n", curr->data);
-		curr = curr->next;
+		printf("%d\n", current->data);
+		current = current->next;
 	}
 
 }
 
-STACK* pop(STACK* top)
+voidp popc(stack* top)
 {
 	if(top == NULL)
 		return top;
 
 	printf("Deleted: %d\n", top->data);
-	STACK* ptr_next = top->next;
+	stack* ptr_next = top->next;
 	free(top);
 	return ptr_next;
 }
-
